@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+   <link href="https://cdn.bootcss.com/Swiper/4.5.0/css/swiper.css" rel="stylesheet">
+   <link href="https://cdn.bootcss.com/animate.css/3.6.2/animate.min.css" rel="stylesheet">
+  <style>
+    html,body{
+      width: 100%;
+      height: 100%;
+      overflow-y: hidden
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    /* .wrapper{
+      width: 100%;
+      height: 100%;
+    } */
+    .wrapper {
+      width: 100%;
+      height: 100%;
+      background: url(./image/20160329182332_32738.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .wrapper .title{
+      /* margin-top: 4rem; */
+      padding-top: 4rem;
+      text-align: center;
+    }
+    .black {
+      width: 16rem;
+      height: 10rem;
+      margin: 0 auto;
+      border-radius: 0.5rem;
+      background-color: #000;
+    }
+    .c-blue {
+      padding: 0 1rem;
+      font-size: 0.9rem;
+      color: blue;
+      text-align: right;
+    }
+    #parent {
+      width: 17rem;
+      height: 15rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      margin-top: 0.5rem;
+    }
+    .row {
+      display: flex;
+      flex: 1;
+      margin: 0 0.2rem;
+    }
+    .item {
+      flex: 1;
+      margin: 0.2rem 0.2rem;
+      border: 1px solid #000;
+    }
+    .down {
+      width: 2rem;
+      height: 2rem;
+      /* display: flex; */
+      position: absolute;
+      bottom: 0.5rem;
+      left: 50%;
+      margin-left: -1rem;
+    }
+    .down img{
+      text-align: center;
+    }
+    /* 1end */
+    /* 2 */
+    .wrapper2 {
+      width: 100%;
+      height: 100%;
+      background: url(./image/20160329182332_32738.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding-top: 1rem; 
+    }
+    .input {
+      margin: 1rem auto;
+      width: 15rem;
+      height: 1.5rem;
+    }
+    .input input {
+      width: 100%;
+      height: 100%;
+      outline: none;
+    }
+    .input button{
+      background-color: skyblue;  
+      width: 100%;
+      height: 100%;
+    }
+    .word {
+      text-align: center;
+      margin: 0px;
+      padding: 0px;
+    }
+    .cmp-button {
+      width: 15rem;
+      height: 2rem;
+      margin:  0 auto;
+      padding-top: 1rem;
+    }
+    .cmp-button button {
+      width: 100%;
+      height: 100%;
+    }
+   .wrapper3{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+     height: 100%;
+     background: url(./image/20160329182332_32738.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+     padding-top: 1rem;
+     text-align: center;
+   }
+   .wrapper3 .loading {
+     width: 1rem;
+     height: 1rem;
+   }
+   .wrapper3 img{
+     display: block;
+   }
+   .white-tab {
+     width: 14rem;
+     margin: 0 auto;
+     height: 2rem;
+     border: 1px solid black;
+     box-shadow: 0.1rem 0.2rem 0.3rem #000;
+     margin-top: 0.2rem;
+     background-color: #fff;
+   }
+   /* 4 */
+   .wrapper4 {
+     width: 100%;
+     height: 100%;
+     background: url(./image/20160329182332_32738.png);
+     background-size: cover;
+     background-repeat: no-repeat;
+     padding-top: 1rem;
+     /* background-color: #ccc; */
+   }
+   .wrapper4-inner, .wrapper5-inner{
+      width: 13rem;
+      height: 25rem;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+   .wrapper4-inner .button-group{
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+   }
+   .wrapper4-inner .line-text{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+   }
+   .wrapper5 {
+    width: 100%;
+    height: 100%;
+    background: url(./image/20160329182332_32738.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 1rem;
+    /* background-color: #ccc; */
+   }
+  </style>
+  
+</head> 
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="wrapper" id="wrapper">
+          <div class="title animated rollIn">梦想计算机</div>
+          <div class="black animated fadeInDown" id="black" style="display: none">
+            <div class="black-inner" id="backInner" style="display: none">
+              <p class="c-blue animated fadeInLeft">输入你未来想赚的金额</p>
+              <p class="c-blue animated fadeInLeft">计算机会为你计算出</p>
+              <p class="c-blue animated fadeInLeft">你多久能实现！</p>
+            </div>
+          </div>
+          <div class="grid">
+            <div id="parent">
+              <div class="row animated" id="row1" style="visibility: hidden">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">3</div>
+                <div class="item">3</div>
+              </div>
+              <div class="row animated" id="row2" style="visibility: hidden">
+                <div class="item">4</div>
+                <div class="item">5</div>
+                <div class="item">6</div>
+                <div class="item">6</div>
+                <div class="item">6</div>
+              </div>
+              <div class="row animated" id="row3" style="visibility: hidden">
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">9</div>
+                <div class="item">9</div>
+              </div>
+              <div class="row animated" id="row4" style="visibility: hidden">
+                <div class="item">7</div>
+                <div class="item">8</div>
+                <div class="item">9</div>
+                <div class="item">9</div>
+                <div class="item">9</div>
+              </div>
+            </div>
+          </div>
+          <div class="down class=" animated bounceDown"">
+            <img src="./image/xiangshang_jiantou (1).png" width="80%" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="wrapper2">
+           <p class="input" id="input1" style="display: none">
+             <input type="text" placeholder="输入你的金额10万-100万">
+           </p>
+           <p class="input" id="input2" style="display: none">
+             <input type="text" placeholder="现在的工资情况">
+           </p>
+           <p class="input" id="input3" style="display: none">
+             <input type="text" placeholder="姓名">
+           </p>
+           <p class="input button" id="input4" style="display: none">
+             <button>提交</button>
+           </p>
+           <div class="word-wrap" id="wordWrap" style="display: none">
+             <p class="word">你的梦想最开始的时候</p>
+             <p class="word">是否想过自己未来能赚多少</p>
+             <p class="word">每天都要掐指计算收入与支出</p>
+             <p class="word">把大把美好的青春时光</p>
+             <p class="word">都献给了工作</p>
+             <p class="word">你累吗</p>
+             <p class="word">这个梦想计算机会算出你实现梦想需要多久</p>
+             <p class="word">从新看待自己的人生规划</p>
+             <p class="word">快快输入信息吧</p>
+           </div>
+           <div class="cmp-button" id="CmpButton" style="display: none">
+             <button>点击开始计算</button>
+           </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="wrapper3">
+          <div class="loading" style="display: none" id="loading">
+            <img class="animated" src="./image/jiazaizhong.png" width="50%" alt="">
+          </div>
+          <div class="text animated zoomIn" id="text1" style="display: none">
+            <p>正在计算中...</p>
+            <p>这可能需要花费点时间</p>
+          </div>
+          <div class="text animated zoomIn" id="text2" style="display: none">
+            <p>在计算结果出来前</p>
+            <p>请你可以选择回答一下问题</p>
+            <p>这样可以更准确算出</p>
+            <p>你的梦想实现数据</p>
+          </div>
+          <div class="text animated zoomIn" id="text3" style="display: none">
+            <h1>你梦想的驾驶</h1>
+          </div>
+          <div class="tab-wrapper" id="text4" style="display: none">
+            <div class="white-tab"></div>
+            <div class="white-tab"></div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="wrapper4">
+          <div class="wrapper4-inner" id="w4inner" style="display: none">
+            
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="wrapper5">
+          <div class="wrapper5-inner" style="display: none">
+              <div class="logo"></div>
+              <div>梦想计算机</div>
+              <div class="line" style="display: none">----------------------</div>
+              <div class="line-text" style="display: none">
+                <p>你与实现梦想不吃不喝</p>
+                <p>还差10年</p>
+              </div>
+              <div class="line" style="display: none">----------------------</div>line
+              <img style="display: none" src="" alt="">
+              <p style="display: none">还要奋斗十年是不是很累</p>
+              <img src="" alt="">
+              <div class="button-group">
+                <button>重新选择</button>
+                <button>点击快速圆梦</button>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/Swiper/4.5.0/js/swiper.js"></script>
+  <script>
+    let wrapper = document.getElementById("wrapper");
+    let mySwiper = new Swiper('.swiper-container', {
+      direction: 'vertical', // 垂直切换选项
+      on: {
+        slideChange: function () {
+          // console.log();
+          if (this.activeIndex == 1) {
+            next1();
+          } else if(this.activeIndex == 2) {
+            next2();
+          } else if (this.activeIndex == 3) {
+            next3();
+            // console.log(3)
+          }
+        }
+      }
+    })
+    let htmlWidth = document.documentElement.clientWidth || document.body.clientWidth;
+     let htmlDom = document.getElementsByTagName('html')[0];
+      if (htmlWidth > 750) {
+        htmlWidth = 750
+      }
+    htmlDom.style.fontSize = htmlWidth / 20 + 'px';
+    
+    
+    
+    function show(ele,time) {
+      setTimeout(function () {
+        ele.style.visibility = "visible";
+        ele.className = "row animated fadeInDown"
+      }, time);
+    }
+    function show2 (ele,time) {
+      setTimeout(function () {
+        ele.style.display = "block";
+      }, time);
+    }
+    indexinit()
+    function indexinit () {
+      let oBlack = document.getElementById("black");
+      let oRow1 = document.getElementById("row1");
+      let oRow2 = document.getElementById("row2");
+      let oRow3 = document.getElementById("row3");
+      let oRow4 = document.getElementById("row4");
+      let oBackInner = document.getElementById("backInner");
+      show2(oBlack,500);
+      show(oRow1,1000);
+      show(oRow2,1500);
+      show(oRow3,2000);
+      show(oRow4,2500);
+      show2(oBackInner,3000)
+    }
+    function show3 (ele,time) {
+      setTimeout(function () {
+        ele.style.display = "block";
+        ele.className = "input animated rollIn"
+      }, time);
+    }
+    function next1() {
+      let oInput1 = document.getElementById("input1");
+      let oInput2 = document.getElementById("input2");
+      let oInput3 = document.getElementById("input3");
+      let oInput4 = document.getElementById("input4");
+      let wordWrap = document.getElementById("wordWrap");
+      let CmpButton = document.getElementById("CmpButton");
+      show3(oInput1,500)
+      show3(oInput2,1000)
+      show3(oInput3,1500)
+      show3(oInput4,2000)
+      setTimeout(function () {
+        wordWrap.style.display = "block";
+        wordWrap.className = "word animated bounceInDown";
+      },2000);
+      setTimeout(function () {
+        CmpButton.style.display= "block";
+        CmpButton.className = "cmp-button jackInTheBox animated"
+      },2500)
+    }
+    function showText (ele,time) {
+      setTimeout(function () {
+        ele.style.display = "block";
+        ele.className = "animated zoomIn";
+      },time);
+    } 
+    function next2 () {
+      let oLoading = document.getElementById("loading");
+      let oText1 = document.getElementById("text1");
+      let oText2 = document.getElementById("text2");
+      let oText3 = document.getElementById("text3");
+      let oText4 = document.getElementById("text4");
+      showText(oLoading,500);
+      showText(oText1,1000);
+      showText(oText2,1500);
+      showText(oText2,2000);
+      showText(oText3,2500);
+      // showText(oText4,2500);
+      setTimeout(function () {
+        oText4.style.display = "block";
+        oText4.className = "white-tab animated slideInLeft";
+      },3000);
+    }
+    function next3 () {
+      let w4inner = document.getElementById("w4inner");
+      let logo = document.getElementById("logo");
+      let dreamcmp = document.getElementById("dreamcmp");
+      let linetop = document.getElementById("linetop");
+      let dreamwordtop = document.getElementById("dreamwordtop");
+      let linebottom = document.getElementById("linebottom");
+      let car = document.getElementById("car");
+      let dreambottom = document.getElementById("dreambottom");
+      let tcode = document.getElementById("tcode");
+      let btnGroup = document.getElementById("btnGroup");
+      setTimeout(function (){
+        w4inner.style.display="block";
+        w4inner.className = "wrapper4-inner animated slideInUp";
+      },500)
+      setTimeout(function (){},1000)
+      setTimeout(function (){},1500)
+      setTimeout(function (){},2000)
+      setTimeout(function (){},2500)
+      setTimeout(function (){},3000)
+    }
+  </script>
+</body>
+</html>
